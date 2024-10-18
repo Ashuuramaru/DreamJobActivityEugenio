@@ -27,17 +27,16 @@ if (isset($_POST['insertNewDeveloperBtn'])) {
 }
 
 if (isset($_POST['editDeveloperBtn'])) {
-    $developer_id = $_GET['developer_id']; // Make sure to get the developer ID from the URL
-    $firstName = trim($_POST['first_name']); // Update to match input names
-    $lastName = trim($_POST['last_name']); // Update to match input names
+    $developer_id = $_GET['developer_id']; 
+    $firstName = trim($_POST['first_name']);
+    $lastName = trim($_POST['last_name']); 
     $gender = trim($_POST['gender']);
     $age = trim($_POST['age']);
     $email = trim($_POST['email']);
     $school = trim($_POST['school']);
-    $devSkills = trim($_POST['dev_skills']); // Update to match input names
+    $devSkills = trim($_POST['dev_skills']); 
     $portfolio = trim($_POST['portfolio']);
 
-    // Make sure all required fields are not empty
     if (!empty($developer_id) && !empty($firstName) && !empty($lastName) && !empty($gender) && !empty($age) && !empty($email) && !empty($school) && !empty($devSkills) && !empty($portfolio)) {
         $query = updateADeveloper($pdo, $developer_id, $firstName, $lastName, $gender, $age, $email, $school, $devSkills, $portfolio);
 
